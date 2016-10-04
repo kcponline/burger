@@ -46,23 +46,3 @@ var orm = {
 };
 
 module.exports = orm;
-
-// {
-//     selectWhere: function(tableInput, colToSearch, valOfCol) {
-//         var queryString = 'SELECT * FROM ' + tableInput + ' WHERE ' + colToSearch + ' = ?';
-
-//         connection.query(queryString, [valOfCol], function(err, result) {
-//             return result;
-//         });
-//     },
-//     selectAndOrder: function (whatToSelect, table, orderCol, orderBy) {
-// 		var queryString = 'SELECT ' + whatToSelect + ' FROM ' + table + ' ORDER BY ' + orderCol + ' ' + orderBy;
-// 		console.log(queryString);
-// 		connection.query(queryString, function (err, result) {
-// 			console.log(result);
-// 		});
-// 	},
-
-// };
-
-// module.exports = orm;
