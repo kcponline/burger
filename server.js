@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require("method-override");
+var orm = require('orm');
 
 var app = express();
 
@@ -21,5 +22,8 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
 
+// comment out for heroku deployment
 var port = 3000;
+// added for heroku deployment
+var port = process.env.PORT || 3000;
 app.listen(port);
