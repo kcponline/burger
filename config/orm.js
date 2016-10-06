@@ -1,4 +1,30 @@
+/*
+Here is the O.R.M. where you write functions that takes inputs and conditions and turn them into database commands like SQL.
+*/
 var connection = require('../config/connection.js');
+
+function printQuestionMarks(num) { // not sure why these codes were omitted originally. by mistake?
+	var arr = [];
+
+	for (var i = 0; i < num; i++) {
+		arr.push('?');
+	}
+
+	return arr.toString();
+}
+
+function objToSql(ob) {  // not sure why these codes were omitted originally. by mistake?
+	// column1=value, column2=value2,...
+	var arr = [];
+
+	for (var key in ob) {
+		if (ob.hasOwnProperty(key)) {
+			arr.push(key + '=' + ob[key]);
+		}
+	}
+
+	return arr.toString();
+}
 
 var orm = {
 	all: function (tableInput, cb) {
